@@ -1,0 +1,201 @@
+import React, { useState } from 'react';
+import WizardHeader from '../../components/wizardComponents/wizardHeader';
+import WizardHeadline from '../../components/wizardComponents/wizardHeadline';
+import _dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import { createPlan } from '../../apiclient/wizardFetch';
+import Image from 'next/image';
+
+export default function Step1({}) {
+
+    const router = useRouter();
+
+    const onCreatePlan = async (newPlan) => {
+        const createdPlan = await createPlan(newPlan);
+        setPlan(createdPlan);
+        router.push(`../wizard/step2?planId=${createdPlan._id}`);
+    }
+
+    function complete(){
+        if (firstName.length === 0 && phoneNumber.length === 0 && (dateOfBirthDay.length === 0 || dateOfBirthYear.length === 0)) {
+            setErrors('*This field is required')
+            setErrors1('*This field is required')
+            setErrors2('*This field is required')
+            scrollOnError();
+        } else if (firstName.length === 0 && phoneNumber.length === 0) {
+            setErrors('*This field is required')
+            setErrors1('')
+            setErrors2('*This field is required')
+            scrollOnError();
+        } else if (firstName.length === 0 && (dateOfBirthDay.length === 0 || dateOfBirthYear === 0)) {
+            setErrors('*This field is required')
+            setErrors1('*This field is required')
+            setErrors2('')
+            scrollOnError();
+        } else if (phoneNumber.length === 0 && (dateOfBirthDay.length === 0 || dateOfBirthYear === 0)) {
+            setErrors('')
+            setErrors1('*This field is required')
+            setErrors2('*This field is required')
+            scrollOnError();
+        } else if (firstName.length === 0) {
+            setErrors('*This field is required')
+            setErrors1('')
+            setErrors2('')
+            scrollOnError();
+        } else if (phoneNumber.length === 0) {
+            setErrors('')
+            setErrors1('')
+            setErrors2('*This field is required')
+            scrollOnError();
+        } else if (dateOfBirthDay.length === 0 || dateOfBirthYear === 0) {
+            setErrors('')
+            setErrors1('*This field is required')
+            setErrors2('')
+            scrollOnError();
+        } else {
+            onCreatePlan(_plan)          
+        }
+    };
+
+    function scrollOnError() {
+        window.scrollTo(0, 0);
+    }
+
+    const [plan, setPlan] = useState({});
+    const [errors, setErrors] = useState('')
+    const [errors1, setErrors1] = useState('')
+    const [errors2, setErrors2] = useState('')
+    const [showForm, setShowForm] = useState(false)  
+    const [firstName, setFirstName] = useState('')
+    const [dateOfBirthDay, setDateOfBirthDay] = useState('')
+    const [dateOfBirthYear, setDateOfBirthYear] = useState('')
+    const [dateOfBirthMonth, setDateOfBirthMonth] = useState('January')
+    const [gender, setGender] = useState('Male');
+    const [socialSecurity, setSocialSecurity] = useState('Yes')
+    const [phoneNumber, setPhoneNumber] = useState('')
+
+
+    let [_plan, _setPlan] = useState({plan});
+    
+    const { _id } = plan;
+
+    function back() {
+      router.push(`/createPlan`);
+    }
+
+    _plan = { dateOfBirthDay, dateOfBirthYear, dateOfBirthMonth, gender, firstName, socialSecurity, phoneNumber };
+    
+    return (
+        <div>
+          <div className="backArrowButton" onClick={back}>
+            <p className="backArrowP">← back to start</p>
+          </div>
+          <WizardHeader></WizardHeader>
+          <div className="formBorder">
+          <WizardHeadline></WizardHeadline>
+            <div className="inputsDiv1">
+                <div className="inputDiv">
+                    <label className="inputLabel">First Name</label><br></br>
+                    <input
+                    name="firstName"
+                    className="formInputPages"
+                    placeholder="First Name"
+                    value={firstName}
+                    onChange={e=> 
+                        setFirstName(e.target.value)
+                        }
+                    /><br></br>
+                    <p className="errors">{errors}</p>
+                </div>
+                <div className="inputDiv">
+                    <label className="inputLabel">Birthday</label><br></br>
+                    <select
+                    name="dateOfBirthMonth"
+                    className="formSelect"
+                    value={dateOfBirthMonth}
+                    onChange={e=> { 
+                        setDateOfBirthMonth(e.target.value)
+                        }}>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                    </select>
+                    <input
+                    name="dateOfBirthDay"
+                    className="formInputDob"
+                    value={dateOfBirthDay}
+                    placeholder="Day"
+                    onChange={e=> 
+                        setDateOfBirthDay(e.target.value)
+                        }
+                    type="input"
+                    />
+                    <input
+                    name="dateOfBirthYear"
+                    className="formInputDob"
+                    value={dateOfBirthYear}
+                    placeholder="Year"
+                    onChange={e=> 
+                        setDateOfBirthYear(e.target.value)
+                        }
+                        type="input"
+                    /><br></br>
+                    <p className="errors">{errors1}</p>
+                </div>
+                <div className="inputDiv">
+                    <label className="inputLabel">Phone Number</label><br></br>
+                    <input
+                    name="phoneNumber"
+                    className="formInputPages"
+                    placeholder="123-123-1234"
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    value={phoneNumber}
+                    type="tel"
+                    onChange={e=> 
+                        setPhoneNumber(e.target.value)
+                        }
+                    /><br></br>
+                    <p className="errors">{errors2}</p>
+                </div>
+                <div className="inputDiv">
+                    <label className="inputLabel">Gender</label><br></br>
+                    <select
+                    name="gender"
+                    className="formSelect"
+                    value={gender}
+                    onChange={e=> { 
+                        setGender(e.target.value)
+                        }}>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Prefer not to say</option>
+                    </select><br></br>
+                </div>
+                <div className="inputDiv">
+                    <label className="inputLabel">Are you eligible for social security?</label><br></br>
+                    <p className="inputLabelSubheadline">If unsure, choose yes</p>
+                    <select
+                    name="socialSecurity"
+                    className="formSelect"
+                    value={socialSecurity}
+                    onChange={e=> setSocialSecurity(e.target.value)}
+                    >
+                    <option>No</option>
+                    <option>Yes</option>
+                    </select><br></br>
+                </div>
+                <button onClick={complete} className="wizardButton">Next &#187;</button>
+            </div>
+            </div>
+        </div>
+    )
+}

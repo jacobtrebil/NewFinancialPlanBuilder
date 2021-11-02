@@ -1,0 +1,1493 @@
+/* Universal Styles */
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu";
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  overflow-x: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: black;
+  font-size: 48px;
+  font-family: "Ubuntu";
+  font-weight: 700;
+}
+
+h2 {
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Ubuntu";
+}
+
+h3 {
+  font-size: 16px;
+  color: #808080;
+  font-family: "Ubuntu";
+  font-weight: 400;
+}
+
+.app {
+  text-align: center;
+  background-color: white;
+  padding: 0px 0px 0px 100px;
+  height: 100%;
+}
+
+p {
+  font-size: 14px;
+  color: #535353;
+  font-family: "Ubuntu";
+  font-weight: 400;
+}
+
+button {
+  background-color: rgb(4, 187, 172);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 18px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Ubuntu";
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(2, 177, 162);
+}
+
+/* I should have h1s which are "plan", "create a plan", "customize your retirement", etc. and h2s which are like the wizard headlines */
+
+/* Make standard h1, h2, and p styles and consolidate the css file into as little code as possible. Goal is under 1k lines of code. */
+
+/* Dashboard Section */
+
+.plansH2 {
+  margin: 80px 0px 0px 120px;
+  text-align: left;
+}
+
+.newPlansSection {
+  background-color: #f5f8f7;
+  padding: 60px 40px;
+  width: 80%;
+  margin: 50px auto 20px auto;
+  border-radius: 8px;
+  border: 1px solid #dee7e4;
+  text-align: left;
+}
+
+/* Plans Page */
+
+.navBar {
+  height: 100%;
+  width: 64px;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  border-right: 1px solid #dbdbdb;
+  padding: 60px 0px 0px 0px;
+}
+
+.plansSideLogo {
+  margin: 60px 0px 0px 0px;
+  opacity: 60%;
+}
+
+.plansButton {
+  display: inline-block;
+  float: left;
+  margin: 35px 0px 0px 125px;
+  border-radius: 40px;
+  bottom: 0;
+  position: relative;
+}
+
+.dashboardButton {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 30px 20px 0px 0px;
+  margin: 0px auto 20px auto;
+  text-align: center;
+}
+
+.dashboardButton:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.dashboardButtonsSection {
+  float: right;
+  width: 20%;
+  vertical-align: top;
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+  display: inline-block;
+}
+
+.dashboardMain {
+  margin: 130px 0px 200px 0px;
+}
+
+.planInfo {
+  display: inline-block;
+  margin: 0px 0px 0px 30px;
+}
+
+.dashboardProgressBarH2 {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0px 10px 0px 15px;
+}
+
+.dashboardProgressBarCircle {
+  display: inline-block;
+  border-radius: 20px;
+  background-color: #e0e0e0;
+  padding: 0px 15px;
+}
+
+.dashboardProgressBarHr {
+  width: 6%;
+  display: inline-block;
+  margin: 5px 10px 0px 0px;
+  border: 1px solid #e0e0e0;
+}
+
+.dashboardProgressBarP {
+  margin: 10px 0px;
+  padding: 0px;
+}
+
+/* Back Arrow Section */
+
+.backArrowButton {
+  padding: 20px 0px 20px 40px;
+  position: relative;
+  text-align: left;
+  border-bottom: 1px solid #dbdbdb;
+  width: 100%;
+  background-color: white;
+}
+
+.backArrowP {
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+}
+
+.backArrowP:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.dashboardProgressButton {
+  margin: 20px auto 60px auto;
+}
+
+.greenP {
+  color: rgb(4, 187, 172);
+}
+
+.whiteP {
+  color: white;
+}
+
+.greenBackground {
+  background-color: rgb(4, 187, 172);
+}
+
+/* Sidebar Section */
+
+.settingsIcon:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.plansIcon {
+  margin: 0px 64px 0px 0px;
+}
+
+.plansIcon:hover {
+  cursor: pointer;
+  opacity: 75%;
+}
+
+.fpbTopLogo {
+  display: block;
+}
+
+.sideLogo {
+  margin: 60px 0px 0px 0px;
+  opacity: 60%;
+}
+
+/* Settings Section */
+
+.settingsContent {
+  background-color: white;
+  padding: 60px 0px 60px 0px;
+  width: 80%;
+  margin: 40px auto 80px auto;
+  border-radius: 8px;
+}
+
+.settingsBlock {
+  background-color: #f5f8f7;
+  margin: 20px 0px 280px 0px;
+  padding: 20px 0px 20px 0px;
+  border-radius: 8px;
+  border: 1px solid #dee7e4;
+}
+
+.settingsTitle {
+  margin: 15px 0px 10px 50px;
+  display: inline-block;
+  float: left;
+  padding: 0px;
+}
+
+.cancelButton {
+  float: right;
+  display: inline-block;
+  margin: 0px 70px 15px 0px;
+  background-color: red;
+  padding: 12px 24px;
+  font-size: 14px;
+  bottom: 0;
+  position: relative;
+}
+
+.cancelButton:hover {
+  background-color: rgb(209, 2, 2);
+  cursor: pointer;
+}
+
+.settingsHr {
+  width: 92%;
+  border: 1px solid rgb(226, 225, 225);
+  margin: 10px auto 0px auto;
+}
+
+.settingsMessage {
+  font-weight: normal;
+  text-align: center;
+  margin: 40px 0px 20px 0px;
+}
+
+.paymentButton {
+  float: right;
+  display: inline-block;
+  margin: 0px 70px 15px 0px;
+  padding: 12px 24px;
+  font-size: 14px;
+  bottom: 0;
+  position: relative;
+}
+
+.logOut {
+  margin: 0px 0px 0px 0px;
+  text-align: right;
+}
+
+/* Footer Section */
+
+.footerSection {
+  border-top: 1px solid #dbdbdb;
+  margin: auto 0px auto 0px;
+  padding: 30px 0px 30px 0px;
+  bottom: 0;
+  width: 100%;
+  position: relative;
+}
+
+.footerSection p {
+  font-weight: normal;
+  display: inline-block;
+  text-align: left;
+}
+
+.footerCopyright {
+  float: right;
+  margin: 4px 40px 0px 0px;
+}
+
+.footerNavBox {
+  display: inline-block;
+  float: left;
+  margin: 0px 0px 0px 60px;
+  padding: 0px 0px 30px 0px;
+}
+
+.footerCopyrightBox {
+  display: inline-block;
+  float: right;
+}
+
+.footerNavItem {
+  margin: 0px 20px 0px 40px;
+  display: inline-block;
+}
+
+.footerNavItem:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+/* Legal Page */
+.legalSection {
+  padding: 0px 0px 80px 0px;
+}
+
+.legalH1 {
+  margin: 20px 0px 0px 120px;
+}
+
+.terms {
+  font-weight: normal;
+  margin: 20px 60px 0px 120px;
+}
+
+.termsH2 {
+  text-align: left;
+  margin: 20px 0px 0px 120px;
+  font-size: 20px;
+}
+
+/* Create a Plan */
+
+.createAPlan {
+  margin: 1% auto 0% auto;
+  text-align: center;
+  font-size: 48px;
+  font-family: "Ubuntu";
+  font-weight: 700;
+}
+
+.createAPlanBox {
+  margin: 12% auto 0px auto;
+}
+
+.createAPlanP {
+  margin: 15px 20% 10px 20%;
+}
+
+.createAPlanP2 {
+  margin: 0px 0px 0px 0px;
+}
+
+.startPlanButton {
+  padding: 18px 28px;
+  font-size: 18px;
+  margin: 30px 0px 200px 0px;
+}
+
+/* Errors */
+
+.errors {
+  color: red;
+  margin: 10px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Wizard Header Styles */
+
+.wizardHeader {
+  background-color: white;
+  color: black;
+  margin: 0px auto 0px auto;
+  padding: 40px 0px 10px 0px;
+  top: 0;
+  text-align: center;
+}
+
+.wizardHeaderH2 {
+  display: inline-block;
+  margin: 11px 16px 10px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+}
+
+.wizardHeaderH2Selected {
+  display: inline-block;
+  margin: 11px 10px 10px 11px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.wizardHeaderH2SelectedCircle {
+  display: inline-block;
+  margin: 11px 10px 10px 11px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.wizardHeaderHr {
+  color: rgb(211, 211, 211);
+  background-color: rgb(211, 211, 211);
+  border: 1px solid rgb(211, 211, 211);
+  width: 5%;
+  display: inline-block;
+  margin: 0px 0px 3px 0px;
+  padding: 0px;
+}
+
+.circle {
+  background-color: rgb(224, 224, 224);
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 0px 0px 20px;
+}
+
+.selectedCircle {
+  background-color: rgb(4, 187, 172);
+  color: white;
+}
+
+/* Wizard Footer Styles */
+
+.wizardFooter {
+  background-color: white;
+  padding: 20px 0px 40px 0px;
+  margin: 20px 0px 0px 0px;
+  width: 100%;
+}
+
+.wizardFooterButton {
+  margin: 0px 5% 0px 0px;
+  position: static;
+  padding: 18px 28px;
+  font-size: 18px;
+}
+
+.wizardButton {
+  margin: 20px 0px;
+  padding: 18px 38px;
+  font-size: 18px;
+}
+
+/* Wizard Headline Styles */
+
+.wizardHeadline {
+  text-align: left;
+  margin: 5% 0px 0px 8%;
+}
+
+.wizardSubheadline {
+  text-align: left;
+  margin: 1% 0px 0px 8%;
+}
+
+/* Wizard Form Styles */
+
+.inputsDiv1 {
+  margin: 20px 0px 0px 0px;
+  width: 100%;
+  padding: 10px 0px 0px 8%;
+  text-align: left;
+}
+
+.formBorder {
+  border: solid 2px #a5a5a5;
+  width: 50%;
+  border-radius: 8px;
+  margin: 40px auto 40px auto;
+  padding: 10px 10px 35px 10px;
+}
+
+.formInput {
+  width: 40%;
+  margin: 0px 40px 0px 0px;
+  border: 1px rgb(221, 221, 221) solid;
+  padding: 20px 0px 20px 0px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.formInputPages {
+  width: 40%;
+  margin: 5px 40px 0px 0px;
+  border: 1px rgb(221, 221, 221) solid;
+  padding: 10px 0px 10px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.formInputDob {
+  width: 10%;
+  margin: 5px 0px 0px 10px;
+  border: 1px rgb(221, 221, 221) solid;
+  padding: 10px 0px 10px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.inputLabel {
+  font-size: 16px;
+  margin: 0px 0px 5px 5px;
+  color: rgb(0, 0, 0);
+  padding: 20px 0px 20px 0px;
+}
+
+.inputLabelSubheadline {
+  margin: 5px 0px 5px 5px;
+  padding: 0px;
+  font-size: 14px;
+}
+
+.inputDiv {
+  margin: 0px 0px 20px 0px;
+}
+
+.formSelect {
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+  border: 1px rgb(221, 221, 221) solid;
+  padding: 10px 0px 10px 9px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Customization Page Styles */
+har
+.loading {
+  margin: 25% auto 20% auto;
+  text-align: center;
+}
+
+.recommendationsH2 {
+  padding: 30px 0px 0px 0px;
+  margin: 0px 0px -5px 0px;
+}
+
+.scorecardButton {
+  margin: 100px auto 0px auto;
+  text-align: center;
+  padding: 18px 28px;
+  font-size: 18px;
+  display: block;
+}
+
+.barChart {
+  margin: 40px auto 0px auto;
+  color: black;
+}
+
+.block1 {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  margin: 20px 0px 0px 0px;
+  padding: 0px;
+}
+
+.block2 {
+  display: inline-block;
+  width: 50%;
+  margin: 30px 0px 0px 0px;
+  padding: 0px;
+}
+
+.blocksSection {
+  display: block;
+  margin: 0px auto 20px auto;
+  border: 2px solid #a5a5a5;
+  width: 90%;
+  border-radius: 4px;
+  padding: 0px 0px 50px 0px;
+}
+
+.projectionsHeadline {
+  margin: 0px 0px 40px 0px;
+}
+
+.customizationQuestion {
+  font-weight: normal;
+  font-size: 14px;
+  color: black;
+}
+
+.chartHeadline {
+  margin: 30px 0px 0px 0px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+
+.chartSubheadline {
+  margin: 5px 0px -25px 0px;
+  color: rgb(119, 119, 119);
+  font-size: 12px;
+}
+
+.chartDescription {
+  margin: 0px 0px 20px 0px;
+  font-size: 14px;
+  color: #858585;
+}
+
+.decisionsSocialSecuritySection {
+  display: inline-block;
+  width: 30%;
+  margin: 10px 10px 10px 10px;
+  vertical-align: top;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 10px 10px 20px 10px;
+}
+
+.decisionsSocialSecuritySection h1 {
+  text-align: center;
+  margin: -20px auto 20px auto;
+}
+
+.projectionsP {
+  margin: 0px 0px 20px 0px;
+}
+
+.projectionsPage {
+  background-color: white;
+  margin: 0px 0px 0px 0px;
+}
+
+/* Scenario Form Section */
+
+.scenarioFormInput {
+  width: 40%;
+  border: 1px rgb(221, 221, 221) solid;
+  padding: 10px 0px 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 15px 0px 0px 0px;
+}
+
+.scenarioFormInput::placeholder {
+  font-size: 14px;
+}
+
+.scenarioLabel {
+  font-size: 14px;
+  text-align: left;
+}
+
+.createNewScenario {
+  margin: 30px 0px 0px 0px;
+}
+
+.saveScenarioButton {
+  margin: 20px auto 0px auto;
+  text-align: center;
+  padding: 18px 28px;
+  font-size: 18px;
+  display: block;
+}
+
+.savedMessage {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Plan Results Page Styles */
+
+.planResultsSection {
+  border: solid 2px #a5a5a5;
+  border-radius: 4px;
+  width: 1000px;
+  margin: 40px auto 25px auto;
+  padding: 0px 0px 50px 0px;
+  background-color: white;
+}
+
+.planResultsDashboardButton {
+  margin: 60px 0px 0px 0px;
+  position: static;
+  padding: 18px 28px;
+  font-size: 18px;
+}
+
+.planProgressBar {
+  border: 2px solid rgba(4, 187, 172, 0.575);
+  width: 75%;
+  margin: 0px 0px 0px 0px;
+  border-radius: 6px;
+  color: rgb(5, 187, 51);
+  background-color: rgb(4, 187, 172);
+  height: 100%;
+}
+
+.planProgressBarContainer {
+  background-color: white;
+  width: 350px;
+  height: 12px;
+  border-radius: 6px;
+  border: rgb(245, 245, 245) 1px solid;
+  background-color: rgba(4, 187, 172, 0.336);
+}
+
+.progressAmount {
+  margin: 10px 0px 0px 0px;
+}
+
+.dashboardPlanHeadline {
+  font-size: 22px;
+  margin: 3px 0px 0px 0px;
+  font-weight: 900;
+}
+
+.dashboardPlanSubheadline {
+  margin: 10px 0px 15px 0px;
+}
+
+.headlineDiv {
+  border: 0px black solid;
+  border-radius: 4px;
+  width: 30%;
+  margin: 40px auto 0px auto;
+  padding: 10px;
+}
+
+.returnsPercentBlock {
+  background-color: black;
+}
+
+.returnsPercent {
+  color: white;
+  font-size: 52px;
+}
+
+
+/* Custom Tooltip */
+
+.customTooltip {
+  background-color: white;
+  padding: 5px 15px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.customTooltipPortfolios {
+  background-color: white;
+  padding: 0px 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.tooltipPPortfolios {
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+}
+
+.tooltipP {
+  font-size: 22px;
+}
+
+
+
+
+/* One Time Expense */
+
+.oneTimeExpenseFormInput {
+  width: 70%;
+  margin: 5px 0px 10px 0px;
+  border: 1px rgb(221, 221, 221) solid;
+  padding: 10px 0px 10px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.oneTimeExpenseLabel {
+  font-size: 14px;
+  text-align: left;
+}
+
+.oneTimeExpenseButton {
+  border-radius: 40px;
+  font-weight: bold;
+  border: black 2px solid;
+  color: black;
+  background-color: white;
+  padding: 14px 24px;
+  margin: 20px 0px 0px 0px;
+}
+
+.oneTimeExpenseButton:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.purchaseGoalsBox {
+  display: inline-block;
+  width: 50%;
+  margin: 10px 10px 10px 10px;
+  vertical-align: top;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 10px 10px 20px 10px;
+}
+
+.purchaseGoalSection {
+  background-color: rgb(250, 250, 250);
+  border-radius: 4px;
+  width: 50%;
+  margin: 10px auto 10px auto;
+  padding: 10px 0px 10px 0px;
+  border: solid 1px rgb(221, 221, 221);
+}
+
+.purchaseGoalP {
+  text-align: left;
+  font-size: 14px;
+  display: inline-block;
+  margin: 10px 20px 10px 0px;
+}
+
+.purchaseGoalCost {
+  display: inline-block;
+  text-align: right;
+  font-weight: bold;
+  margin: 0px 0px 0px 20px;
+}
+
+/* Plan */
+
+.planHeadline {
+  font-size: 20px;
+  margin: 40px 0px 0px 40px;
+  text-align: left;
+}
+
+.planSubheadline {
+  text-align: left;
+  margin: 5px 0px 0px 40px;
+}
+
+.planDocumentUploadBox {
+  display: inline-block;
+  margin: 30px 20px 20px 20px;
+  padding: 0px 10px;
+}
+
+.planDocumentUploadButton {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 40px;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin: 5px 0px 0px 0px;
+}
+
+.planDocumentUploadButton:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.planDocumentUploadType {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0px 0px 0px;
+  color: black;
+}
+
+.noPlanDocumentFound {
+  margin: 15px 0px 20px 0px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.financialPlanHeadline {
+  text-align: center;
+  margin: 40px 0px 10px 0px;
+}
+
+.financialPlanSubheadline {
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+
+.keyInfoP {
+  font-size: 14px;
+  text-align: left;
+  margin: 20px 20px 0px 40px;
+  font-weight: bold;
+}
+
+.keyInfoPLight {
+  font-size: 12px;
+  text-align: left;
+  margin: 10px 20px 20px 40px;
+  color: rgb(119, 119, 119);
+}
+
+.netWorthSection {
+  margin: 0px 0px -10px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.futureIncomeSection {
+  margin: 0px 0px -10px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.pieChart {
+  padding: 0px 0px 0px 100px;
+  margin: 0px 50px 20px 50px;
+}
+
+.pie {
+  width: 100%;
+  height: 100%;
+  margin: 40px 0px 0px 0px;
+  padding: 0px;
+}
+
+.recharts-legend-item {
+  margin: 10px 0px 20px 0px;
+  font-size: 16px;
+}
+
+.recharts-legend-item-text {
+  margin: 0px 0px 0px 5px;
+  color: #535353 !important;
+}
+
+.portfolioButton {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 40px;
+  padding: 16px 32px;
+  font-size: 22px;
+  margin: 5px 0px 0px 0px;
+  font-family: "Ubuntu";
+}
+
+.portfolioButton:hover {
+  cursor: pointer;
+  background-color: rgb(238, 238, 238);
+}
+
+.chartHeadlinePortfolio {
+  margin: 0px 0px 0px 0px;
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chartSubheadlinePortfolio {
+  margin: 5px 0px -60px 0px;
+  color: rgb(119, 119, 119);
+  font-size: 12px;
+}
+
+.planHr {
+  width: 35%;
+  color: #a1a0a0;
+  border: 1px solid #a1a0a0;
+}
+
+.legendItems {
+  font-size: 16px;
+  text-align: left;
+  vertical-align: top;
+  padding: 0px 0px 40px 0px;
+  font-weight: normal;
+}
+
+.legend {
+  padding: 20px 0px;
+  margin: 20px 0px;
+}
+
+.legendList {
+  margin: 20px 140px 0px 0px;
+  vertical-align: top;
+  width: 30%;
+  float: right;
+}
+
+.keyInfoPLightPortfolio {
+  font-size: 12px;
+  text-align: left;
+  margin: -10px 20px 20px 40px;
+  color: rgb(119, 119, 119);
+}
+
+.monthlySavingsSection {
+  margin: 40px 0px 60px 0px;
+  border: 2px black solid;
+  border-radius: 8px;
+  padding: 0px 0px 30px 0px;
+  width: 75%;
+  display: inline-block;
+}
+
+.triBlock {
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.financialProjectionsSection {
+  margin: 0px 20px 0px 0px;
+}
+
+.futureEarningsPadding {
+  margin: 30px 0px 40px 0px;
+}
+
+.monthlySavingsHeadline {
+  font-size: 64px;
+  text-align: center;
+  margin: 20px 0px 30px 0px;
+  padding: 0px;
+}
+
+.monthlySavingsAboveHeadline {
+  text-align: center;
+  margin: 20px 0px 10px 0px;
+  padding: 0px;
+}
+
+.monthlySavingsSubheadline {
+  text-align: center;
+  margin: 20px 0px 0px 0px;
+  padding: 0px;
+}
+
+.financialStrategyP {
+  font-size: 14px;
+  margin: 40px auto 0px auto;
+  padding: 0px 0px 0px 0px;
+  width: 75%;
+  text-align: left;
+}
+
+.chartDescriptionPlan {
+  font-size: 14px;
+  margin: 20px auto 0px auto;
+  padding: 0px 0px 0px 0px;
+  width: 50%;
+  text-align: center;
+}
+
+.pieSubheadline {
+  margin: 10px 0px 0px 0px;
+}
+
+.noteP {
+  margin: -20px 0px 40px 0px;
+  font-size: 14px;
+}
+
+.noPlansFound {
+  text-align: left;
+  margin: 80px 0px 40px 140px;
+}
+
+.planOptionsLink {
+  margin: 20px 0px 0px 20px;
+  display: inline-block;
+  font-size: 16px;
+  color: #535353;
+  background-color: white;
+  font-weight: normal;
+}
+
+.planOptionsLink:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
+
+/* File Upload Buttons */
+
+.inputFile {
+  height: 10px;
+  width: 10px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute !important;
+  z-index: 1;
+}
+
+/* Login Page */
+
+.signInBox {
+  border-radius: 8px;
+  padding: 10px 20px 30px 20px;
+  border: 1px solid #dbdbdb;
+  width: 30%;
+  margin: 6% auto;
+}
+
+.signInHeadline {
+  margin: 0px;
+  padding: 40px 0px 0px 0px;
+}
+
+.signInButton {
+  padding: 22px 100px;
+  margin: 20px auto 10px auto;
+}
+
+.signInInput {
+  padding: 20px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  width: 80%;
+  margin: 10px 0px 0px 0px;
+}
+
+.signInHeader {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 10px 100px 5px 100px;
+  margin: 0px;
+  text-align: left !important;
+}
+
+.signInHeaderLogo {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  display: block !important;
+  text-align: left !important;
+}
+
+.signInHeaderLogoContainer {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  display: block;
+  width: 10% !important;
+}
+
+.createAccountToggle:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Virality Section */
+
+.viralityBox {
+  margin: 200px 0px 0px 10%;
+  border: 1px solid #dbdbdb;
+  width: 85%;
+  border-radius: 4px;
+}
+
+.viralityTopText {
+  color: rgb(4, 187, 172);
+  text-align: left;
+  margin: 40px 0px 0px 60px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.viralityH2 {
+  text-align: left;
+  margin: 10px 0px 0px 60px;
+}
+
+.viralitySubheadline {
+  text-align: left;
+  margin: 15px 0px 0px 63px;
+}
+
+.viralityInput {
+  padding: 25px 60px;
+  border-radius: 4px;
+  border: 1px solid #dbdbdb;
+  font-size: 16px;
+  margin: 20px 0px 20px 0px;
+}
+
+.sendInvitesButton {
+  margin: 0px 20px 0px 40px;
+}
+
+.viralityOr {
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.copyLinkButton {
+  margin: 0px 20px;
+}
+
+.shareButton {
+  margin: 0px 0px;
+}
+
+/* Invest Now Popup */
+
+.popupBackground {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 5;
+  top: 0;
+}
+
+.popupContent {
+  border-radius: 8px;
+  background-color: white;
+  width: 50%;
+  margin: 10% auto 0px auto;
+  padding: 30px 40px 40px 40px;
+}
+
+.popupX {
+  float: right;
+  color: rgb(163, 163, 163);
+  font-size: 22px;
+  margin: 0px 0px 20px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.popupX:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+
+
+/* New Plan Designs */
+
+.financialGoal {
+  font-size: 42px;
+  font-weight: 400;
+  text-align: left;
+  color: #292D33;
+  margin: 40px 0px 80px 140px;
+}
+
+.planTop {
+  background-image: linear-gradient(100deg, #07b1a354, #07b1a354);
+  padding: 60px 20px;
+  border-radius: 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.planBottom {
+  border-radius: 10px;
+  margin: 0px 0px 0px 0px;
+  padding: 20px;
+  background-color: rgb(248, 248, 248);
+}
+
+.keyInsightsHeadline {
+  margin: 0px;
+  font-size: 42px;
+  padding: 5px 10px;
+  background-color:rgb(216, 216, 216);
+  border-radius: 6px;
+}
+
+.keyInsightsDiv {
+  padding: 5px 10px;
+  width: 25%;
+  margin: 40px 80px;
+  border-radius: 0px;
+}
+
+.keyInsightsBlock {
+  display: inline-block;
+  margin: 0px 20px;
+  border-radius: 4px;
+  padding: 10px;
+  width: 30%;
+  top: 0;
+  vertical-align: top;
+}
+
+.retirementAgeHighlight {
+  background-color:rgba(4, 187, 172, 0.336);
+  padding: 0px 10px;
+  border-radius: 0px;
+  margin: 0px;
+}
+
+.retirementAgeUnderline {
+  background-image: linear-gradient(180deg, transparent 62px, rgba(4, 187, 172) 50%, rgba(4, 187, 172) 100%);
+  background-position: 0 100%;
+  text-decoration: none;
+}
+
+.financialPlanHeadline {
+  text-align: center;
+  margin: 40px 0px 0px 0px;
+}
+
+.financialPlanHeadline2 {
+  text-align: left;
+  margin: 0px 0px 0px 80px;
+  font-size: 120px;
+}
+
+.financialPlanSubheadline {
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+
+.portfolioInvestNowButton {
+  border: 6px solid black;
+  font-size: 32px;
+  color: black;
+  background-color: white;
+  border-radius: 100px;
+  margin: 40px auto;
+}
+
+.portfolioInvestNowButton:hover {
+  background-color: #B7E3DE;
+  cursor: pointer;
+}
+
+.newBarChart {
+  border: 2px solid rgb(207, 207, 207);
+  padding: 0px;
+  border-radius: 8px;
+  margin: 60px 20px 40px 20px;
+  padding: 0px;
+  text-align: center;
+}
+
+.newBarBlock {
+  margin: 20px auto;
+  text-align: center;
+  display: inline-block;
+  padding: 0px 0px 0px 0px;
+}
+
+.retirementIncomeChartHeadline {
+  text-align: left;
+  margin: 20px 0px 0px 60px;
+  font-size: 36px;
+}
+
+.retirementIncomeChartSubheadline {
+  text-align: left;
+  margin: 50px 0px 0px 60px;
+  color: gray;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.chartHr {
+  width: 100%;
+  background-color: #CFCFCF;
+  border: 1px solid #CFCFCF;
+}
+
+.ageChartLeft {
+  display: inline-block;
+  margin: -5px 0px 10px 0px;
+  padding: 0px 0px 5px 0px;
+  color: #808080;
+}
+
+.ageChartMiddle {
+  display: inline-block;
+  margin: -5px 0px 10px 0px;
+  padding: 0px 30% 5px 30%;
+  color: #808080;
+}
+
+.ageChartRight {
+  display: inline-block;
+  margin: -5px 0px 10px 0px;
+  padding: 0px 0px 5px 0px;
+  color: #808080;
+}
+
+.uploadButton {
+  background-color: white;
+  color: black;
+  border: 5px solid black;
+  font-weight: bold;
+  padding: 18px 38px;
+  border-radius: 80px;
+  font-size: 24px;
+  display: inline-block;
+
+}
+
+.uploadButton:hover {
+  background-color: #B7E3DE;
+  cursor: pointer;
+}
+
+.uploadDiv {
+  display: inline-block;
+  margin: 60px 15px 30px 15px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid #d3d1d1;
+}
+
+.uploadDescription {
+  padding: 20px;
+  font-size: 18px;
+}
+
+.newPlanSection {
+  margin: 0px 0px 60px 0px;
+}
+
+.sectionHeader {
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.sectionHeaderDiv {
+  border-radius: 8px;
+  background-color:#BDE5E0;
+  width: 40%;
+  margin: 0px 0px 0px 60px;
+}
+.custom-anchor {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+  
