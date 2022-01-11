@@ -1,14 +1,12 @@
 import dbConnect from '../../../util/wizardDbConnect';
 import Plan from '../../../models/wizardSchema';
 import WizardCalculationsHelper from '../helper/wizardCalculationsHelper';
-import { getSession, withApiAuthRequired } from "@auth0/nextjs-auth0";
 
-export default withApiAuthRequired(async function wizardCalculationsRoute(req, res) {
+export default async function wizardCalculationsRoute(req, res) {
     const { method } = req
     const id = req.query.id;
 
     await dbConnect();
-    const userEmail = getSession(req, res).user.email
 
     switch (method) {
         case 'POST':
@@ -27,4 +25,4 @@ export default withApiAuthRequired(async function wizardCalculationsRoute(req, r
             res.status(400).json()
             break
     }
-})
+}

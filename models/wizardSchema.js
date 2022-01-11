@@ -157,7 +157,7 @@ var PlanModel = new mongoose.Schema({
   Number,
   ageOfDeath: Number,
   riskScoreFromFormValues: String,
-  phoneNumber: String, 
+  phoneNumber: String, Number, 
   partTimeWorkEarnings: Number,
   healthcareStartingExpense: Number,
   yearsOfPartTimeWork: Number,

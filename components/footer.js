@@ -12,7 +12,7 @@ export function Footer() {
             <Link href="/settings"><p className="footerNavItem">Account</p></Link>
         </div>
         <div className="footerCopyrightBox">
-            <p className="footerCopyright">©2021 FinancialPlanBuilder</p>
+            <p className="footerCopyright">©2021 Retire Redi</p>
         </div>
     </div>
     );

@@ -1,49 +1,59 @@
-import React, { useState, useEffect } from "react";
-import _Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import _dynamic from "next/dynamic";
+import React, { useEffect } from 'react';
+import _dynamic from 'next/dynamic';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
-import Progress from '../components/progress/progress';
-import ProgressBar from '../components/progress/progressBar';
-import ProgressCta from '../components/progress/progressCta';
+/* import Icon from '../public/images/icon2.png';
+import Snapshot from '../public/images/planSnapshot3.png'; */
 
-const NavComponent = _dynamic(() =>
-  import("../components/nav").then((mod) => mod.SideBar)
-);
+function Home() {
 
-const FooterComponent = _dynamic(() =>
-  import("../components/footer").then((mod) => mod.Footer)
-);
-
-const PlanBlockComponent = _dynamic(() =>
-  import("../components/planBlock").then((mod) => mod.PlanBlock)
-);
-
-const ViralityComponent = _dynamic(() =>
-  import("../components/virality").then((mod) => mod.Virality)
-);
-
-export function App() {
   const router = useRouter();
   const { user } = useUser();
 
-  // I'll probably have to write a useEffect that runs the setProgress function once the page is run.
-  // I should have this in a component called progress though and I should just pull that function in here. 
+  function back() {
+    router.push(`/`);
+  }
 
-  console.log("user =====", user);
-  return (
-    <div>
-      <div className="dashboardMain">
-        <Progress></Progress>
-        <h2 className="plansH2">Your Plan</h2>
-        {user && <PlanBlockComponent email={user?.email}/>}
+  useEffect(async () => {
+    if (user) {
+      router.push(`/dashboard`);
+    }
+  });
+
+    return (
+      <div>
+          <div className="homeBody">
+            <div className="homeHeader">
+                <div className="homeLogoBlock">
+                  <Image className="homeFpbLogo" src="/images/retireredi.png" width={200} height={70}/>
+                </div>
+                <nav class="homeHeaderNav">
+                    <a href="/createPlan"><button className="homeNavButton homeNavItem">Create Plan &#187;</button></a>
+                    <a href="https://app.financialplanbuilder.com/api/auth/login"><p className="homeNavLogin homeNavItem" href="dev-ayaqr-fe.us.auth0.com/login">Log In</p></a>
+                </nav>
+            </div>
+            <div class="homeMainSection">
+                <div class="homeHeadlineBlock">
+                    <h1 className="homeH1">Create Your <br></br>Retirement Plan </h1>
+                    <h2 className="homeH2">Free retirement plan tool, plus the <br></br>most fun way to become prepared for retirement. </h2>
+                    <a href="/createPlan"><button className="homeMainButton">Create Plan &#187;</button></a>
+                </div>
+                <div class="homeImageBlock">
+                  <Image className="homePlanSnapshot" src="/images/planSnapshot4.png" width={800} height={400}/>
+                </div>
+            </div>
+            <div class="homeFooter">
+                <p className="homeP">Copyright © Retire Redi</p>
+                <p className="homeP">Terms of Use | Privacy Policy</p>
+            </div>
+          </div>
       </div>
-      <NavComponent />
-      <FooterComponent />
-    </div>
-  );
-}
+    );
+  } 
+  
+  export default Home;
 
-export default App;
+  /*                 <Image id="logo" src={Icon} width={40} height={40} />
+                      <Image class="mainImage" src={Snapshot} width={40} height={40} /> */

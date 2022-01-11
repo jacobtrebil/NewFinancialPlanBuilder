@@ -88,7 +88,7 @@ export default function InvestNowPopup({ show, setShow, plans }) {
             </p>
             <h2>Next Step: Set Up Your Investment Account</h2>
             <h3>
-              A Financial Plan Builder representative will be reaching out to
+              A Retire Redi representative will be reaching out to
               you within the next 24 hours to help set up your investment
               account! Before the call, please prepare your bank account
               information to speed up the account set up process.

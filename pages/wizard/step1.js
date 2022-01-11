@@ -17,12 +17,12 @@ export default function Step1({}) {
     }
 
     function complete(){
-        if (firstName.length === 0 && phoneNumber.length === 0 && (dateOfBirthDay.length === 0 || dateOfBirthYear.length === 0)) {
+        if (firstName.length === 0 && (dateOfBirthDay.length === 0 || dateOfBirthYear.length === 0)) {
             setErrors('*This field is required')
             setErrors1('*This field is required')
             setErrors2('*This field is required')
             scrollOnError();
-        } else if (firstName.length === 0 && phoneNumber.length === 0) {
+        } else if (firstName.length === 0) {
             setErrors('*This field is required')
             setErrors1('')
             setErrors2('*This field is required')
@@ -32,7 +32,7 @@ export default function Step1({}) {
             setErrors1('*This field is required')
             setErrors2('')
             scrollOnError();
-        } else if (phoneNumber.length === 0 && (dateOfBirthDay.length === 0 || dateOfBirthYear === 0)) {
+        } else if ((dateOfBirthDay.length === 0 || dateOfBirthYear === 0)) {
             setErrors('')
             setErrors1('*This field is required')
             setErrors2('*This field is required')
@@ -41,11 +41,6 @@ export default function Step1({}) {
             setErrors('*This field is required')
             setErrors1('')
             setErrors2('')
-            scrollOnError();
-        } else if (phoneNumber.length === 0) {
-            setErrors('')
-            setErrors1('')
-            setErrors2('*This field is required')
             scrollOnError();
         } else if (dateOfBirthDay.length === 0 || dateOfBirthYear === 0) {
             setErrors('')
@@ -72,7 +67,6 @@ export default function Step1({}) {
     const [dateOfBirthMonth, setDateOfBirthMonth] = useState('January')
     const [gender, setGender] = useState('Male');
     const [socialSecurity, setSocialSecurity] = useState('Yes')
-    const [phoneNumber, setPhoneNumber] = useState('')
 
 
     let [_plan, _setPlan] = useState({plan});
@@ -83,7 +77,7 @@ export default function Step1({}) {
       router.push(`/createPlan`);
     }
 
-    _plan = { dateOfBirthDay, dateOfBirthYear, dateOfBirthMonth, gender, firstName, socialSecurity, phoneNumber };
+    _plan = { dateOfBirthDay, dateOfBirthYear, dateOfBirthMonth, gender, firstName, socialSecurity };
     
     return (
         <div>
@@ -150,21 +144,6 @@ export default function Step1({}) {
                         type="input"
                     /><br></br>
                     <p className="errors">{errors1}</p>
-                </div>
-                <div className="inputDiv">
-                    <label className="inputLabel">Phone Number</label><br></br>
-                    <input
-                    name="phoneNumber"
-                    className="formInputPages"
-                    placeholder="123-123-1234"
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                    value={phoneNumber}
-                    type="tel"
-                    onChange={e=> 
-                        setPhoneNumber(e.target.value)
-                        }
-                    /><br></br>
-                    <p className="errors">{errors2}</p>
                 </div>
                 <div className="inputDiv">
                     <label className="inputLabel">Gender</label><br></br>

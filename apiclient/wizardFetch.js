@@ -154,6 +154,79 @@ export const updateLastStep = async (id, plan) => {
   return await response.json();
 };
 
+export const updatePhoneNumber = async (id, plan) => {
+  const response = await fetch(`/api/updatePhoneNumber/${id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(plan),
+  });
+  return await response.json();
+};
+
+
+export const createTextMagicContact = async (id, plan) => {
+  const response = await fetch(`/api/createTextMagicContact`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(plan),
+  });
+  return await response.json();
+};
+
+
+export const createToken = async (id, plan) => {
+  const response = await fetch(`/api/token/${id}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(plan),
+  });
+  return await response.json();
+};
+
+export const verifyToken = async (id, plan) => {
+  const response = await fetch(`/api/verify/${id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(plan),
+  });
+  return await response.json();
+};
+
+export const verified = async (id) => {
+  const response = await fetch(`/api/verified/${id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  return await response.json();
+};
+
+export const getTokenInfoCall = async (id) => {
+  const response = await fetch(`/api/getTokenInfo/${id}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  return await response.json();
+};
+
+
 // the id is not getting passed in here properly
 
 /* Consolidate the code using something like this: 

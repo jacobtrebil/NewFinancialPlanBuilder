@@ -1491,3 +1491,215 @@ har
   text-decoration: underline;
 }
   
+
+
+
+/* Home */
+
+
+.homeBody {
+  font-family: 'Ubuntu';
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.homeHeader {
+  border-bottom: solid 1px rgb(204, 204, 204);
+  padding: 12px 40px 0px 40px;
+  margin: 0px 0px 0px 0px;
+  background-color: white;
+  height: 105px;
+}
+
+.homeH1 {
+  font-size: 82px;
+  color: black;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  text-align: left;
+}
+
+.homeH2 {
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0px 0px 0px 0px;
+  padding: 20px 0px 10px 0px;
+  color: rgb(73, 73, 73);
+  text-align: left;
+}
+
+.homeP {
+  color: gray;
+  font-size: 14px;
+  margin: 20px 0px 0px 0px;
+  padding: 0px;
+  text-align: left;
+}
+
+.homeHeaderNav {
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  float: right;
+}
+
+.homeNavItem {
+  display: inline-block;
+  position: relative;
+}
+
+.homeButton {
+  background-color: #00BBAC;
+  color: white;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  margin: 20px 0px 0px 0px;
+  font-size: 16px;
+}
+
+.homeButton:hover {
+  background-color: #07B1A2;
+  cursor: pointer;
+}
+
+.homeMainSection {
+  width: 100%;
+  margin: 0% auto 0px auto;
+  background-color: #07b1a30c;
+  z-index: 0;
+  padding: 0px 0px 0px 0px;
+}
+
+.homeHeadlineBlock {
+  padding: 20px;
+}
+
+.homeMainButton {
+  font-size: 24px;
+  padding: 22px 44px;
+  margin: 20px 0px 100px 0px;
+  text-align: left;
+  display: block;
+}
+
+.homeNavButton {
+  margin: 12px 0px 0px 0px;
+}
+
+.homeNavLogin {
+  margin: 12px 10px 0px 20px;
+  font-size: 16px;
+}
+
+.homeNavLogin:hover {
+  color: rgb(70, 70, 70);
+  cursor: pointer;
+}
+
+.homePlanSnapshot {
+  box-shadow: 1 2px 4px 0 rgba(0,0,0,0.5), 1 1px 5px 0 rgba(0,0,0,0.5);
+}
+
+.homeFooter {
+  border-top: 1px solid rgb(204, 204, 204);
+  width: 100%;
+  margin: -5px 0px 0px 0px;
+  padding: 5px 20px 20px 20px;
+}
+
+.homeHeadlineBlock {
+  display: inline-block;
+  width: 55%;
+  padding: 0px 0px 0px 7%;
+  margin: 8% 0px 0px 0px;
+  z-index: 2;
+  position: absolute;
+}
+
+.homeImageBlock {
+  display: inline-block;
+  width: 55%;
+  padding: 0px;
+  margin: 12% 100px 0px 41%;
+  vertical-align: bottom;
+}
+
+.homeMainImage {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 100%;
+  margin: 0px 0px -5px 0px;
+  padding: 0px;
+  z-index: 10;
+  opacity: 50%;
+  vertical-align: bottom;
+}
+
+.homeFpbLogo {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.homePlanSnapshot {
+  opacity: 50%;
+  margin: 0px 0px -5px 0px;
+}
+
+.homeLogoBlock {
+  margin: 7px 0px 0px 0px;
+  display: inline-block;
+  float: left;
+}
+
+
+
+
+
+
+/* SMS Design */
+
+.smsInputs {
+  padding: 15px 20px;
+  margin: 0px auto 20px auto;
+  width: 30%;
+  border: rgb(190, 190, 190) solid 1px;
+  border-radius: 4px;
+}
+
+.smsLabels {
+  text-align: left;
+  color:rgb(95, 95, 95);
+  font-size: 14px;
+  padding: 0px 0px 0px 5px;
+  margin: 0px 0px 0px 0px;
+  float: left;
+}
+
+.smsLabelBlock {
+  width: 30%;
+  margin: 0px auto;
+}
+
+.inputsDiv {
+  margin: 30px 0px 0px 0px;
+}
+
+.smsButton {
+  margin: 20px 0px 0px 0px;
+}
+
+.smsErrors {
+  color: red;
+  margin: -10px 0px 20px 0px;
+}
+
+.smsSent {
+  color: green;
+  margin: -10px 0px 20px 0px;
+}

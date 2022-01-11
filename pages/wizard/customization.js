@@ -528,7 +528,7 @@ function Summary(plan1) {
           className="scorecardButton"
           onClick={function clickHandler() {
             saveStep();
-            router.push(`/wizard/planResults/?planId=${plan._id}`);
+            router.push(`/sms?planId=${planId}`);
           }}
         >
           Get My Plan &#187;
