@@ -12,7 +12,6 @@ export default async function wizardCalculationsRoute(req, res) {
         case 'POST':
             try {
                await WizardCalculationsHelper.reCalculate(id)
-
                 const plan = await Plan.findById(id);
                 res.status(200).json( plan );
                 return;

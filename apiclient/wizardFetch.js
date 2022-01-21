@@ -201,7 +201,13 @@ export const verifyToken = async (id, plan) => {
     },
     body: JSON.stringify(plan),
   });
-  return await response.json();
+  if (response.status >= 200 && response.status < 400) {
+    console.log('====== success======')
+    return await response.json();
+  } else {
+    console.log('coming in co errro r', response)
+    throw new Error('code mismatch')
+  }
 };
 
 export const verified = async (id) => {

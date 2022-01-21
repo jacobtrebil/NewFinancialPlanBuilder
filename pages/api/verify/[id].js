@@ -14,10 +14,20 @@ import verifyToken from '../../../calculations/verifyToken';
                 const document = await Token.findOne({ planId: id })
                 const { verify } = req.body;
                 await Token.updateOne({ planId: id}, { verify });
-                res.status(200).json( document );
+                document.verified = verifyToken(document.token, verify);
+                await Token.updateOne({ planId: id}, { verified: document.verified });
+                if (document.verified === true) {
+                    await Token.deleteOne({ planId: id});
+                    res.status(200).json( document );
+                } else if (document.verified === false) {
+                    res.status(422).json();
+                }
             } catch (error) {
-                res.status(400).json({});
+                res.status(422).json({});
             } 
             break
 }
 }
+
+// I could maybe just import a function and export it from sms to set the error
+// Message if it's a 400?

@@ -1,6 +1,7 @@
 import Plan from "../../../models/wizardSchema";
 import dbConnect from "../../../util/wizardDbConnect";
 import textmagicClient from "textmagic-client";
+import setFormattedPhoneNumber from '../../../models/wizardSchema';
 
 export default async function wizardPutApiRoute(req, res) {
   const { method } = req;
@@ -33,9 +34,10 @@ export default async function wizardPutApiRoute(req, res) {
         const plan = await Plan.findOne({ _id: id });
         const { phoneNumber, token } = req.body;
         await Plan.updateOne({ _id: id }, { phoneNumber });
+        plan.formattedPhoneNumber = setFormattedPhoneNumber(plan.phoneNumber);
         await api.sendMessage({
             'text': `${token}`,
-            'phones': `+${phoneNumber}`
+            'phones': `+${plan.formattedPhoneNumber}`
         })
         res.status(200).json(plan);
         return;

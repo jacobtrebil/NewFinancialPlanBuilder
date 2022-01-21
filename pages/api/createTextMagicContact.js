@@ -45,6 +45,3 @@ export default async function createTextMagicContactApiCall(req, res) {
             break
     }
 }
-
-// It's not detecting phoneNumber because it's not a function that I'm passing
-// Req, res through. I have no req.body to get the phoneNumber from 

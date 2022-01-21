@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
-import _dynamic from 'next/dynamic';
-import Image from 'next/image';
 import { useRouter } from "next/router";
-import { updatePhoneNumber, createToken, verifyToken, getTokenInfoCall, verified } from '../apiclient/wizardFetch';
-import { authenticator, totp, hotp } from 'otplib';
+import { updatePhoneNumber, createToken, verifyToken } from '../apiclient/wizardFetch';
+import { authenticator } from 'otplib';
 
 function StartPlan() {
 
@@ -33,41 +30,24 @@ function StartPlan() {
   let [_verify, _setVerify] = useState({});
 
   const onUpdatePhoneNumber = async (newPlan) => {
-    const updatedPhoneNumber = await updatePhoneNumber(planId, newPlan);
-    const createdToken = await createToken(planId, newPlan);
+    await updatePhoneNumber(planId, newPlan);
+    await createToken(planId, newPlan);
 }
 
-
-
-/**
- * In thei api  verify call, check whether code entered by the user,
- * matches the once which has been sent. if that happens, remove the token record
- * and send 200 with response excluding the token itself.
- * 
- * If the token does not match, then return 422.
- * In front-end check if status is non 200, in that case show error, other wise 
- * move to next step.
- */
-
-
-  // response =  await response.json()
-  // response.code >= 200 && response.code < 400 // success case
-  // else the failure case
-  // By doing things this way, I shouldn't need the 2nd GET call, just the original
-  // Verify API call. UpdatePhone -> token -> verify & verified in 1 call and 
-  // return the info in that call as well
-
   const onInputVerificationCode = async (newPlan) => {
-    const updatedVerify = await verifyToken(planId, newPlan);
+    console.log('coming in the verification code')
+    try {
+      const response = await verifyToken(planId, newPlan); 
+      setCodeErrors('');
+      console.log('the respons eis====', response)
+      router.push(`/api/auth/login?planId=${planId}`); 
+    } catch(err){
+      setCodeErrors('Code incorrect. Please try again.');
+    }
   }
 
-  const getTokenInfo = async () => {
-    const tokenInfo = await getTokenInfoCall(planId);
-    setTokenDocumentInfo(tokenInfo);
-  }
-
-  const verifyCode = async (newPlan) => {
-    const verifiedCode = await verified(planId, newPlan);
+  const deleteTokenApi = async (newPlan) => {
+    await deleteToken(planId, newPlan);
   }
 
   function checkVerified(tokenDocumentInfo) {
@@ -84,13 +64,8 @@ function StartPlan() {
       checkPhoneNumberForErrors();
     } else {
       inputCode();
-      verifyCode();
-      await getTokenInfo();
       console.log(tokenDocumentInfo);
       /* checkVerified(tokenDocumentInfo); */
-      // get info from db
-      // function that checks for errors or sends them to the next step & deletes doc
-      // add stuff here 
     }
     }
 
