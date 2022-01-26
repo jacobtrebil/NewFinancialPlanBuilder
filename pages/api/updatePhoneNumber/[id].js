@@ -1,7 +1,7 @@
 import Plan from "../../../models/wizardSchema";
 import dbConnect from "../../../util/wizardDbConnect";
 import textmagicClient from "textmagic-client";
-import setFormattedPhoneNumber from '../../../models/wizardSchema';
+import setFormattedPhoneNumber from '../../../calculations/formatPhoneNumber';
 
 export default async function wizardPutApiRoute(req, res) {
   const { method } = req;
@@ -17,7 +17,7 @@ export default async function wizardPutApiRoute(req, res) {
   auth.username = "jacobtrebil";
   auth.password = "TvNyFDQlFOf2VOulfuUNlrfRemouwy";
 
-  const input = {
+  /* const input = {
     phone: req.body.phoneNumber,
     brand: "fpb",
     codeLength: 4,
@@ -26,7 +26,7 @@ export default async function wizardPutApiRoute(req, res) {
     language: "en-gb",
     senderId: "+12065294258",
     country: "US",
-  };
+  }; */
 
   switch (method) {
     case "PUT":
@@ -34,10 +34,11 @@ export default async function wizardPutApiRoute(req, res) {
         const plan = await Plan.findOne({ _id: id });
         const { phoneNumber, token } = req.body;
         await Plan.updateOne({ _id: id }, { phoneNumber });
-        plan.formattedPhoneNumber = setFormattedPhoneNumber(plan.phoneNumber);
+        plan.formattedPhoneNumber = setFormattedPhoneNumber(phoneNumber); 
+        await plan.save()
         await api.sendMessage({
             'text': `${token}`,
-            'phones': `+${plan.formattedPhoneNumber}`
+            'phones': `${plan.formattedPhoneNumber}`
         })
         res.status(200).json(plan);
         return;
